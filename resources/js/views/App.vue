@@ -1,6 +1,7 @@
 <template>
   <section>
     <HeaderWeb />
+    <router-view></router-view>
   </section>
 </template>
 
