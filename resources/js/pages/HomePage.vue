@@ -35,7 +35,7 @@
                 posts: [],
                 currentPage: 1,
                 lastPage: null,
-                loading: false,
+                loading: true,
             }
         },
 

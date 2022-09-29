@@ -1996,7 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
       posts: [],
       currentPage: 1,
       lastPage: null,
-      loading: false
+      loading: true
     };
   },
   methods: {
