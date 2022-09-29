@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-center m-3" style="width: 20rem;">
+  <div class="card text-center m-3" style="width: 21rem;">
     <div class="card-header"> {{ post.user.name }} </div>
     <div class="card-image p-2">
         <img :src="isValidURL(post.post_image) ? post.post_image : 'http://127.0.0.1:8000/storage/' + post.post_image" class="image-card" :alt="post.title">

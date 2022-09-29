@@ -2280,7 +2280,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "card text-center m-3",
     staticStyle: {
-      width: "20rem"
+      width: "21rem"
     }
   }, [_c("div", {
     staticClass: "card-header"
