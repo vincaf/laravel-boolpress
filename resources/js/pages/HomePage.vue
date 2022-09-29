@@ -2,8 +2,8 @@
   <main class="container">
     <div class="row">
         <div class="col-12">
-            <div v-if="isLoading" class="loader">
-                <h1>Sto caricando</h1>
+            <div v-if="isLoading" class="loader text-center p-5 m-5">
+                <MainLoader />
             </div>
 
             <div v-else class="post-container">
@@ -28,12 +28,14 @@
 
 <script>
     import PostCard from '../components/PostCard.vue';
+    import MainLoader from '../components/MainLoader.vue';
     import axios from 'axios';
 
     export default {
         name: 'HomePage',
         components:{
           PostCard,
+          MainLoader,
         },
 
         data: function(){
