@@ -1982,7 +1982,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["post"],
+  props: {
+    post: Object
+  },
   methods: {
     isValidURL: function isValidURL(string) {
       var regex = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
@@ -2037,12 +2039,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Main_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Main.vue */ "./resources/js/components/Main.vue");
+/* harmony import */ var _components_Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Main.vue */ "./resources/js/components/Main.vue");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'HomePage',
   components: {
-    MainComponent: _components_Main_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MainComponent: _components_Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -2068,7 +2070,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      post: {},
+      post: {
+        user: ''
+      },
       loading: false
     };
   },

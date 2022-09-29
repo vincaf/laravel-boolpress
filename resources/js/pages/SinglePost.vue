@@ -21,7 +21,9 @@
 
         data: function(){
             return{
-                post: {},
+                post: {
+                    user:''
+                },
                 loading: false,
             }
         },

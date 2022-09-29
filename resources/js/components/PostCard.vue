@@ -20,7 +20,9 @@
 
 <script>
 export default {
-  props: ["post"],
+  props: {
+    post: Object,
+  },
   methods:{
     isValidURL(string) {
       var regex = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
