@@ -2362,7 +2362,15 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", [_vm._v("THIS IS US")])]);
+  return _c("div", {
+    staticClass: "container py-5"
+  }, [_c("h1", [_c("strong", [_vm._v("THIS IS US")])]), _vm._v(" "), _c("h3", [_vm._v("Know something about our project")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex beatae cumque, saepe deserunt ad velit, nemo accusamus impedit animi maiores, praesentium nesciunt exercitationem? Expedita harum dolorum optio voluptatem ut voluptate?")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur exercitationem cum, praesentium, ea minus, ratione autem ad dignissimos totam suscipit necessitatibus provident? Quia sit fugit veniam nobis, impedit itaque earum?")]), _vm._v(" "), _c("img", {
+    staticClass: "img-fluid my-3",
+    attrs: {
+      src: "https://informatics.sourceweb.ag/wp-content/uploads/2018/02/about-us.png",
+      alt: "jumbo-about-us"
+    }
+  })]);
 }];
 render._withStripped = true;
 
