@@ -1996,7 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
       posts: [],
       currentPage: 1,
       lastPage: null,
-      loading: true
+      isLoading: true
     };
   },
   methods: {
@@ -2018,7 +2018,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.posts = response.data.results.data;
         _this.currentPage = response.data.results.current_page;
         _this.lastPage = response.data.results.last_page;
-        _this.loading = false;
+        _this.isLoading = false;
       })["catch"](function (error) {
         console.error(error);
       });
@@ -2317,9 +2317,13 @@ var render = function render() {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-12"
+  }, [_vm.isLoading ? _c("div", {
+    staticClass: "loader"
+  }, [_c("h1", [_vm._v("Sto caricando")])]) : _c("div", {
+    staticClass: "post-container"
   }, [_c("h1", {
     staticClass: "p-3 m-3"
-  }, [_vm._v("\n              Recent posts:\n          ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                Recent posts:\n            ")]), _vm._v(" "), _c("div", {
     staticClass: "d-flex flex-wrap justify-content-between"
   }, _vm._l(_vm.posts, function (post) {
     return _c("PostCard", {
@@ -2348,7 +2352,7 @@ var render = function render() {
         _vm.getNextPage(), _vm.getPosts();
       }
     }
-  }, [_vm._v("Next Page")])])])])]);
+  }, [_vm._v("Next Page")])])])])])]);
 };
 
 var staticRenderFns = [];

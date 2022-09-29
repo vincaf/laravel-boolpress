@@ -2,19 +2,25 @@
   <main class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="p-3 m-3">
-                Recent posts:
-            </h1>
-
-            <div class="d-flex flex-wrap justify-content-between">
-                <PostCard v-for="post in posts" :key="post.id" :post="post" />
+            <div v-if="isLoading" class="loader">
+                <h1>Sto caricando</h1>
             </div>
 
-            <div class="d-flex align-items-center justify-content-around mb-4 mt-3">
-                <a :class="currentPage != 1 ? '' : 'disabled'" class="btn btn-primary" @click="getPrevPage(), getPosts()">Prev Page</a>
-                <div class="ms_current_page font-weight-bold">{{currentPage}}</div>
-                <a :class="currentPage >= 9 ? 'disabled' : ''" class="btn btn-primary" @click="getNextPage(), getPosts()">Next Page</a>
-            </div>  
+            <div v-else class="post-container">
+              <h1 class="p-3 m-3">
+                  Recent posts:
+              </h1>
+
+              <div class="d-flex flex-wrap justify-content-between">
+                  <PostCard v-for="post in posts" :key="post.id" :post="post" />
+              </div>
+
+              <div class="d-flex align-items-center justify-content-around mb-4 mt-3">
+                  <a :class="currentPage != 1 ? '' : 'disabled'" class="btn btn-primary" @click="getPrevPage(), getPosts()">Prev Page</a>
+                  <div class="ms_current_page font-weight-bold">{{currentPage}}</div>
+                  <a :class="currentPage >= 9 ? 'disabled' : ''" class="btn btn-primary" @click="getNextPage(), getPosts()">Next Page</a>
+              </div>  
+            </div>
         </div>
     </div>
   </main>
@@ -35,7 +41,7 @@
                 posts: [],
                 currentPage: 1,
                 lastPage: null,
-                loading: true,
+                isLoading: true,
             }
         },
 
@@ -58,7 +64,7 @@
                     this.posts = response.data.results.data;
                     this.currentPage = response.data.results.current_page;
                     this.lastPage = response.data.results.last_page;
-                    this.loading = false;
+                    this.isLoading = false;
 
                 }).catch((error) => {
                     console.error(error);
