@@ -2,10 +2,14 @@
   <div class="card text-center m-3" style="width: 20rem;">
     <div class="card-header"> {{ post.user.name }} </div>
     <div class="card-image p-2">
-        <img :src="isValidURL(post.post_image) ? post.post_image : 'storage/' + post.post_image" class="image-card" :alt="post.title">
+        <img :src="isValidURL(post.post_image) ? post.post_image : 'http://127.0.0.1:8000/storage/' + post.post_image" class="image-card" :alt="post.title">
     </div>
     <div class="card-body">
-      <h5 class="card-title"> {{ post.title }} </h5>
+      <h5 class="card-title">
+        <router-link :to="'posts/' + post.id">
+          {{ post.title }}
+        </router-link>
+      </h5>
       <p class="card-text">
         {{ post.post_content.substring(0, 100) }}
       </p>
