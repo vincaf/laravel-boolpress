@@ -2137,7 +2137,7 @@ var render = function render() {
   }, [_c("a", {
     staticClass: "navbar-brand",
     attrs: {
-      href: "#"
+      href: "/"
     }
   }, [_vm._v("Laravel Boolpress")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse",
