@@ -2059,21 +2059,24 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/PostCard.vue */ "./resources/js/components/PostCard.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_MainLoader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MainLoader.vue */ "./resources/js/components/MainLoader.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost',
   components: {
-    PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MainLoader: _components_MainLoader_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
       post: {
         user: ''
       },
-      loading: false
+      isLoading: true
     };
   },
   methods: {
@@ -2081,9 +2084,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var id = this.$route.params.id;
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/posts/".concat(id)).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/posts/".concat(id)).then(function (response) {
         _this.post = response.data.results.data;
-        _this.loading = false;
+        _this.isLoading = false;
       })["catch"](function (error) {
         console.error(error);
       });
@@ -2481,7 +2484,9 @@ var render = function render() {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-12"
-  }, [_c("div", {
+  }, [_vm.isLoading ? _c("div", {
+    staticClass: "loader text-center p-5 m-5"
+  }, [_c("MainLoader")], 1) : _c("div", {
     staticClass: "d-flex flex-wrap justify-content-center"
   }, [_c("PostCard", {
     key: _vm.post.id,
