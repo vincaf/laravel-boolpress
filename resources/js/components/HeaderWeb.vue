@@ -8,7 +8,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto w-100 align-items-center">
                         <li class="nav-item active">
                             <router-link class="nav-link" to="/">
                                 Home
@@ -24,6 +24,11 @@
                                 Contacts
                             </router-link>
                         </li>
+                        <li class="nav-item ml-auto">
+                            <a href="/admin" class="ms_link badge badge-light">
+                                Login
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -37,6 +42,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.ms_link{
+    font-size: 14px;
+}
 </style>
