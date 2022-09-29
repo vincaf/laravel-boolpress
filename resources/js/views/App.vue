@@ -1,18 +1,19 @@
 <template>
   <section>
-    <MainComponent />
+    <HeaderWeb />
   </section>
 </template>
 
 <script>
-    import MainComponent from '../components/Main.vue';
-    export default {
-        
-        components:{
-          MainComponent
-        }
-    };
+import HeaderWeb from '../components/HeaderWeb.vue';
+
+export default {
+    components: {
+      HeaderWeb,
+    }
+}
 </script>
 
 <style>
+
 </style>
