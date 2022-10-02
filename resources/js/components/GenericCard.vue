@@ -5,9 +5,9 @@
             <h3 class="card-title">
                 {{ cardElement.name }}
             </h3>
-            <a href="#" class="btn btn-primary">
+            <router-link :to="'/tags/' + cardElement.id" class="btn btn-primary">
                 View posts with this tag
-            </a>
+            </router-link>
         </div>
     </div>
 </template>
