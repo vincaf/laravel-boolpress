@@ -2333,7 +2333,14 @@ var render = function render() {
     attrs: {
       to: "/contacts"
     }
-  }, [_vm._v("\n                            Contacts\n                        ")])], 1), _vm._v(" "), _vm._m(1)])])])])]);
+  }, [_vm._v("\n                            Contacts\n                        ")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      to: "/tags"
+    }
+  }, [_vm._v("\n                            Tags\n                        ")])], 1), _vm._v(" "), _vm._m(1)])])])])]);
 };
 
 var staticRenderFns = [function () {

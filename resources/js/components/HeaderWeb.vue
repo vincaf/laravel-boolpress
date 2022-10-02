@@ -24,6 +24,11 @@
                                 Contacts
                             </router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/tags">
+                                Tags
+                            </router-link>
+                        </li>
                         <li class="nav-item ml-auto">
                             <a href="/admin" class="ms_link badge badge-light">
                                 Login
