@@ -52,12 +52,13 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        $tag = Tag::with('posts')->findOrFail($id);
+        $tag = Tag::with('posts.user')->find($id);
 
         return response()->json([
             'response' => true,
-            "results" => $tag
-        ]);
+            "results" => [
+                'data' => $tag
+            ]]);
     }
 
     /**
